@@ -1,5 +1,3 @@
-
-
 // ============= chuyeenr trang=============//
 const route = (event) => {
   event = event || window.event;
@@ -14,7 +12,7 @@ function Home(a, b, c, d) {
   document.getElementById(b).style.color = "rgb(37, 37, 37)";
   document.getElementById(b).style.border = "none";
   document.getElementById(c).style.color = "rgb(37, 37, 37)";
-  document.getElementById(c).style.border = "none"
+  document.getElementById(c).style.border = "none";
   document.getElementById(d).style.color = "rgb(37, 37, 37)";
   document.getElementById(d).style.border = "none";
 
@@ -33,7 +31,7 @@ const routes = {
   "/": "/pages/index.html",
   "/News/": "/pages/about.html",
   "/chat/": "/pages/chat.html",
-  "/car/": "/pages/car.html"
+  "/car/": "/pages/car.html",
 };
 
 const handleLocation = async () => {
@@ -50,35 +48,32 @@ handleLocation();
 
 // ================Login INdex=============//
 
-
-document.querySelector('.info_login_headerr').style.display = "none";
+document.querySelector(".info_login_headerr").style.display = "none";
 function IMG() {
-  var loginUser = document.querySelector('.info_login_headerr');
+  var loginUser = document.querySelector(".info_login_headerr");
   if (loginUser.style.display == "block") {
-    loginUser.style.display = "none"
+    loginUser.style.display = "none";
   } else {
-    loginUser.style.display = "block"
+    loginUser.style.display = "block";
   }
 }
-
 
 // ==============comment post video============//
 let check = "none";
 function commentPost() {
   if (check == "none") {
-    check = "block"
+    check = "block";
   } else {
     check = "none";
   }
-  let cmtPost = document.querySelectorAll('.cmtPost');
-  let commentPost = document.querySelectorAll('.comment_video_page');
+  let cmtPost = document.querySelectorAll(".cmtPost");
+  let commentPost = document.querySelectorAll(".comment_video_page");
   for (let i = 0; i < commentPost.length; i++) {
     cmtPost[i].addEventListener("click", function () {
       commentPost[i].style.display = check;
-    })
+    });
   }
 }
-
 
 // ===================follow===============//
 let followcheck = "follow";
@@ -98,22 +93,20 @@ function follow(btn) {
   //   })
   // }
   if (Number(follow)) {
-    btn.innerHTML = "following"
-    btn.dataset.follow = 0
+    btn.innerHTML = "following";
+    btn.dataset.follow = 0;
   } else {
-    var checkFL = confirm('Do you want unfollow ?');
+    var checkFL = confirm("Do you want unfollow ?");
     if (checkFL == false) {
-      btn.innerHTML = "following"
+      btn.innerHTML = "following";
     } else {
       btn.innerHTML = "follow";
-      btn.dataset.follow = 1
+      btn.dataset.follow = 1;
     }
   }
-
 }
 
 // ================= follow right root==============//
-
 
 function followRight(btn) {
   var followRight = btn.dataset.followRight;
@@ -121,73 +114,72 @@ function followRight(btn) {
     btn.innerHTML = "Following";
     btn.dataset.followRight = 0;
   } else {
-
     btn.innerHTML = "Follow";
     btn.dataset.followRight = 1;
-    const list_friends_root_right = document.querySelectorAll('.list_friends_root_right');
-    setTimeout( function() {
+    const list_friends_root_right = document.querySelectorAll(
+      ".list_friends_root_right"
+    );
+    setTimeout(function () {
       for (let i = 0; i < list_friends_root_right.length; ) {
-        list_friends_root_right[i].addEventListener("click", function () {
-          this.style.display="none";
-        },2000)
+        list_friends_root_right[i].addEventListener(
+          "click",
+          function () {
+            this.style.display = "none";
+          },
+          2000
+        );
       }
-    })
+    });
   }
 }
 
 // follow()
 
-
 // ====header===============//
 function Aleart() {
-  var aleart_mess_header = document.querySelector('.aleart_mess_header');
-  var aleart_notifications = document.querySelector('.aleart_notifications');
+  var aleart_mess_header = document.querySelector(".aleart_mess_header");
+  var aleart_notifications = document.querySelector(".aleart_notifications");
   if (aleart_notifications.style.display == "block") {
-    aleart_notifications.style.display = "none"
+    aleart_notifications.style.display = "none";
   } else {
-    aleart_notifications.style.display = "block"
-    aleart_mess_header.style.display = "none"
+    aleart_notifications.style.display = "block";
+    aleart_mess_header.style.display = "none";
   }
-
 }
 
 function Mess() {
-  var aleart_notifications = document.querySelector('.aleart_notifications');
-  var aleart_mess_header = document.querySelector('.aleart_mess_header');
+  var aleart_notifications = document.querySelector(".aleart_notifications");
+  var aleart_mess_header = document.querySelector(".aleart_mess_header");
   if (aleart_mess_header.style.display == "block") {
-    aleart_mess_header.style.display = "none"
+    aleart_mess_header.style.display = "none";
   } else {
-    aleart_mess_header.style.display = "block"
-    aleart_notifications.style.display = "none"
+    aleart_mess_header.style.display = "block";
+    aleart_notifications.style.display = "none";
   }
-
 }
 // =============== post_video =============//
 function postvd() {
-
-  var postvideo = document.querySelector('.postvideo');
-  var testposstvd = document.querySelector('.testposstvd');
+  var postvideo = document.querySelector(".postvideo");
+  var testposstvd = document.querySelector(".testposstvd");
   if (postvideo.style.display == "block") {
     postvideo.style.display = "none";
   } else {
-    testposstvd.style.marginTop = '100px';
+    testposstvd.style.marginTop = "100px";
     postvideo.style.transition = "all 2s";
-    postvideo.style.display = "block"
+    postvideo.style.display = "block";
   }
-
 }
 // ============post news=============//
 function postnews() {
-  var testposstvd = document.querySelector('.testposstvd');
-  var postnews = document.querySelector('.postnews');
+  var testposstvd = document.querySelector(".testposstvd");
+  var postnews = document.querySelector(".postnews");
   if (postnews.style.display == "block") {
     postnews.style.display = "none";
   } else {
-    testposstvd.style.marginTop = '100px';
+    testposstvd.style.marginTop = "100px";
     postnews.style.transition = "all 2s";
-    postnews.style.display = "block"
+    postnews.style.display = "block";
   }
-
 }
 
 // ===============right view all friends=============//
@@ -200,19 +192,18 @@ function postnews() {
 // }
 
 function viewAll() {
-  var viewallText = document.querySelector('#viewAll');
-  var viewall_friends_root_right = document.querySelector('.viewall_friends_root_right');
+  var viewallText = document.querySelector("#viewAll");
+  var viewall_friends_root_right = document.querySelector(
+    ".viewall_friends_root_right"
+  );
   if (viewall_friends_root_right.style.display == "block") {
     viewall_friends_root_right.style.display = "none";
     viewallText.innerHTML = "Xem tất cả";
   } else {
-
     viewall_friends_root_right.style.display = "block";
-    viewallText.innerHTML = "Thu gọn"
+    viewallText.innerHTML = "Thu gọn";
   }
-
 }
-
 
 ///////////////////// scroll play video//////////////////////
 var videos = document.getElementsByTagName("video");
@@ -262,8 +253,5 @@ function checkScroll() {
 window.addEventListener("scroll", checkScroll, false);
 window.addEventListener("resize", checkScroll, false);
 
-
-
 // ============= video =================//
 var vid = document.querySelectorAll(".my_video");
-
